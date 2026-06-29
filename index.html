@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <form action="https://teach-backend-fawn.vercel.app/api/product" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>General Info</legend>
+            <div class="form-row">
+                <label for="itemName">Item Name</label>
+                <input type="text" id="itemName" name="itemName" class="form-input">
+            </div>
+            
+            <div class="form-row">
+                <label for="itemDescription">Description</label>
+                <textarea id="itemDescription" class="form-input"></textarea>
+            </div>
+            
+            <div class="form-row">
+                <label for="category">Category</label>
+                <select id="category" class="form-input">
+                    <option value="not_specified">Not Specified</option>
+                    <option value="consumption">consumption</option>
+                    <option value="household">household</option>
+                    <option value="electronic">electronic</option>
+                    <option value="gadget">gadget</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Misc.</legend>
+            <div class="form-row">
+                <label for="inventoryAmount">Inventory Amount</label>
+                <input type="text" id="inventoryAmount" name="inventoryAmount" class="form-input">
+            </div>
+
+            <div class="form-row">
+                <label for="listPrice">List Price</label>
+                <input type="text" id="listPrice" name="listPrice" class="form-input">
+            </div>
+
+            <div class="form-row">
+                <label>Available Stores</label>
+                <div class="options-group">
+                    <input type="checkbox" id="Bangkok" name="availableStore[]" value="Bangkok">
+                    <label for="Bangkok">Bangkok</label>
+
+                    <input type="checkbox" id="Pattaya" name="availableStore[]" value="Pattaya">
+                    <label for="Pattaya">Pattaya</label>
+
+                    <input type="checkbox" id="Phuket" name="availableStore[]" value="Phuket">
+                    <label for="Phuket">Phuket</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label>Available Stores</label>
+                <div class="options-group">
+                    <input type="radio" id="Active" name="status" value="Active">
+                    <label for="Active">Active</label>
+
+                    <input type="radio" id="Inactive" name="status" value="Inactive">
+                    <label for="Inactive">Inactive</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Staff</legend>
+            <div class="form-row">
+                <label for="staffEmail">Staff Email</label>
+                <input type="email" id="staffEmail" name="staffEmail" class="form-input">
+            </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn" >Submit Form</button>
+    </form>
+</body>
+</html>
